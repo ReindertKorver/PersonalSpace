@@ -1,0 +1,40 @@
+﻿<Page x:Class="PersonalSpaceUI.Pages.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PersonalSpaceUI.Pages"
+      xmlns:controls="clr-namespace:PersonalSpaceUI.Controls"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Menu">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <DockPanel VerticalAlignment="Top" Height="20">
+            <Border BorderBrush="#FFB0B0B0" BorderThickness="0,0,0,1">
+                <DockPanel HorizontalAlignment="Right" Width="200" VerticalAlignment="Stretch">
+
+                    <TextBlock x:Name="UserNameTXT" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,10,0">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Sign out" Click="MenuItem_Click"/>
+                            </ContextMenu>
+                        </TextBlock.ContextMenu></TextBlock>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0,20,0,0">
+            <Grid HorizontalAlignment="Left" Width="200">
+                <Border BorderBrush="#FFB0B0B0" BorderThickness="0,0,1,0" />
+                <StackPanel>
+                    <controls:NavItem  Text="Dashboard" Clicked="NavItem_Clicked" />
+                    <controls:NavItem  Text="Documents" Clicked="NavItem_Clicked" />
+                    <controls:NavItem  Text="Tasks" Clicked="NavItem_Clicked" />
+                    <controls:NavItem  Text="Account" Clicked="NavItem_Clicked" />
+                </StackPanel>
+            </Grid>
+            <Frame x:Name="Main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden" Margin="10,10,10,10">
+            </Frame>
+        </DockPanel>
+    </Grid>
+</Page>
